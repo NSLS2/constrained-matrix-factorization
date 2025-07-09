@@ -1,4 +1,6 @@
 name: Check Code Style
+permissions:
+  contents: read
 
 on: [push, pull_request]
 
@@ -10,6 +12,8 @@ jobs:
     steps:
 
       - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
       - uses: actions/setup-python@v2
 
